@@ -4,7 +4,7 @@ echo "==> Setting up environment..."
 
 if ! [ -f $HOME/.cfg/HEAD ]; then
     echo "==> Downloading dotfiles..."
-    git clone --separate-git-dir=$HOME/.cfg  https://github.com/pardom/dotfiles.git $HOME/cfg-tmp
+    git clone --separate-git-dir=$HOME/.cfg git@github.com:pardom/dotfiles.git $HOME/cfg-tmp
 
     cp -a $HOME/cfg-tmp/.[!.]* .
     rm -r $HOME/cfg-tmp
