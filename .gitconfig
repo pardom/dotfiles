@@ -1,0 +1,31 @@
+[alias]
+	amend = commit --amend
+	discard = checkout --
+	nevermind = !git reset --hard HEAD && git clean -d -f
+	precommit = diff --cached --diff-algorithm=minimal -w
+	remotes = remote -v
+	uncommit = reset --mixed HEAD~
+	unstage = reset -q HEAD --
+[user]
+	email = michael@michaelpardo.com
+	name = Michael Pardo
+[merge]
+	tool = Kaleidoscope
+[mergetool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[core]
+	editor = vim -c 'startinsert'
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
