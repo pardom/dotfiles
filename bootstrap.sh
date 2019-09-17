@@ -76,4 +76,23 @@ if ! [ -x "$(command -v khd)" ]; then
 	brew services restart khd
 fi
 
+if ! [ -f $HOME/.cfg/HEAD ]; then
+    echo "==> Downloading dotfiles..."
+    git clone --separate-git-dir=$HOME/.cfg  https://github.com/pardom/dotfiles.git $HOME/cfg-tmp
+fi
+
+echo "==> Cleaning up..."
+
+if [ -d $HOME/cfg-tmp ]; then
+    rm -r $HOME/cfg-tmp
+fi
+
+if [ -f $HOME/README.md ]; then
+    rm $HOME/README.md
+fi
+
+if [ -f $HOME/bootstrap.sh ]; then
+    rm $HOME/bootstrap.sh
+fi
+
 echo "==> Finished!"
