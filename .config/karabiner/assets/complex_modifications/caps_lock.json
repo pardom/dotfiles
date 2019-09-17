@@ -1,0 +1,31 @@
+{
+  "title": "Change Caps Lock key",
+  "rules": [
+    {
+      "description": "Change Caps Lock to Function if pressed with other keys, to escape if pressed alone.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "fn"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
