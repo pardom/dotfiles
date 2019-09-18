@@ -99,11 +99,9 @@
 
 # prevent skhd from monitoring events for specific applications.
 #
-# .blacklist [
-#    "kitty"
-#    "terminal"
-#    "qutebrowser"
-# ]
+.blacklist [
+   "IntelliJ Idea"
+]
 
 # close focused window
 alt - w : chunkc tiling::window --close
