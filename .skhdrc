@@ -148,9 +148,9 @@ shift + cmd - n : chunkc tiling::desktop --create;\
                   chunkc tiling::desktop --focus $(echo ${id##* })
 
 # create desktop and follow focus
-cmd + alt - n : chunkc tiling::desktop --create;\
-                id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
-                chunkc tiling::desktop --focus $(echo ${id##* })
+# cmd + alt - n : chunkc tiling::desktop --create;\
+#                 id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
+#                 chunkc tiling::desktop --focus $(echo ${id##* })
 # destroy desktop
 cmd + alt - w : chunkc tiling::desktop --annihilate
 
