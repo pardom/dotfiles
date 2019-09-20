@@ -20,11 +20,6 @@ if [ -f $HOME/Brewfile ]; then
     brew bundle
 fi
 
-if ! [ -d $HOME/.chunkwm_plugins ]; then
-    echo "==> Linking chunkwm plugins..."
-    ln -s $(brew --prefix chunkwm)/share/chunkwm/plugins/ $HOME/.chunkwm_plugins
-fi
-
 if ! [ -d $HOME/.vim/plugged ]; then
     echo "==> Installing Vim plugins..."
     vim +PlugInstall +qall > /dev/null
