@@ -1,3 +1,6 @@
+# We don't care about ZSH.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Bash completions
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
