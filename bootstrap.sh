@@ -20,6 +20,11 @@ if [ -f $HOME/Brewfile ]; then
     brew bundle
 fi
 
+if ! [ -d $HOME/.pureline ]; then
+    echo "==> Installing Pureline..."
+    git clone https://github.com/chris-marsh/pureline.git $HOME/.pureline
+fi
+
 if ! [ -d $HOME/.vim/plugged ]; then
     echo "==> Installing Vim plugins..."
     vim +PlugInstall +qall > /dev/null
