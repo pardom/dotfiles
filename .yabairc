@@ -1,0 +1,55 @@
+#!/usr/bin/env sh
+
+# global settings
+yabai -m config \
+	mouse_follows_focus off \
+	focus_follows_mouse off \
+	window_origin_display default \
+	window_placement second_child \
+	window_zoom_persist on \
+	window_shadow on \
+	window_animation_duration 0.0 \
+	window_animation_frame_rate 120 \
+	window_opacity_duration 0.0 \
+	active_window_opacity 1.0 \
+	normal_window_opacity 0.90 \
+	window_opacity off \
+	insert_feedback_color 0xffd75f5f \
+	split_ratio 0.50 \
+	split_type auto \
+	auto_balance off \
+	top_padding 20 \
+	bottom_padding 20 \
+	left_padding 20 \
+	right_padding 20 \
+	window_gap 20 \
+	layout bsp \
+	mouse_modifier fn \
+	mouse_action1 move \
+	mouse_action2 resize \
+	mouse_drop_action swap
+
+# rules
+yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^Android Studio$" manage=off
+yabai -m rule --add app="^CLion$" manage=off
+yabai -m rule --add app="^CLion-EAP$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" manage=off
+yabai -m rule --add app="^JetBrains Toolbox$" manage=off
+yabai -m rule --add app="^JetBrains Rider$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Mixed In Key 10$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Obsidian$" manage=off grid=3:6:1:0:4:2
+yabai -m rule --add app="^Splice$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^UnrealEditor$" manage=off
+yabai -m rule --add app="^Unreal Editor$" manage=off
+yabai -m rule --add app="^Vital$" manage=off
+yabai -m rule --add app="^rekordbox$" manage=off
+
+# signals
+yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+
+echo "yabai configuration loaded.."
