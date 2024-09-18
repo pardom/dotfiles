@@ -1,0 +1,117 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "transient_prompt": {
+    "template": "\ue0b0 ",
+    "foreground": "darkGray",
+    "background": "transparent"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none",
+            "style": "folder"
+          },
+          "trailing_diamond": "\ue0b0",
+          "template": " {{ .Path }} ",
+          "foreground": "white",
+          "background": "darkGray",
+          "type": "path",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\ue0b0",
+          "template": " \ue61e \ue61d {{ .Full }} ",
+          "foreground": "black",
+          "background": "blue",
+          "type": "cmake",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\ue0b0",
+          "template": " \ue738 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "foreground": "black",
+          "background": "16",
+          "type": "java",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\ue0b0",
+          "template": " \ue634 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "foreground": "black",
+          "background": "magenta",
+          "type": "kotlin",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "source": "cli"
+          },
+          "trailing_diamond": "\ue0b0",
+          "foreground": "black",
+          "background": "green",
+          "type": "git",
+          "style": "diamond",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}lightYellow{{ end }}",
+            "{{ if gt .Ahead 0 }}magenta{{ end }}",
+            "{{ if gt .Behind 0 }}magenta{{ end }}"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none",
+            "style": "austin",
+            "threshold": 500
+          },
+          "leading_diamond": "\ue0b2",
+          "template": " {{ .FormattedMs }} ",
+          "foreground": "white",
+          "background": "darkGray",
+          "type": "executiontime",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "leading_diamond": "\ue0b2",
+          "template": " {{ if eq .Code 0 }}\uf00c{{ else }}\uf071 {{ reason .Code }} \u2014 {{ .Code }}{{ end }} ",
+          "foreground": "black",
+          "background": "green",
+          "type": "status",
+          "style": "diamond",
+          "background_templates": [
+            "{{ if .Error }}red{{ end }}"
+          ]
+        }
+      ]
+    }
+  ],
+  "version": 3,
+  "final_space": true
+}
