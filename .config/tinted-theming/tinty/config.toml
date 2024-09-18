@@ -1,0 +1,10 @@
+shell = "zsh -c '{}'"
+default-scheme = "base16-catppuccin-machiato"
+
+[[items]]
+name = "base16-shell"
+path = "https://github.com/tinted-theming/base16-shell"
+themes-dir = "scripts"
+hook = "source %f"
+supported-systems = ["base16"]
+

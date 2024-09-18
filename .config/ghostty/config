@@ -1,0 +1,10 @@
+font-family = "BlexMono Nerd Font Mono"
+font-size = "18"
+
+adjust-cell-height = "50%"
+
+macos-titlebar-style = "transparent"
+
+keybind = global:alt+grave_accent=toggle_quick_terminal
+quick-terminal-animation-duration = 0.0
+quick-terminal-position = bottom
