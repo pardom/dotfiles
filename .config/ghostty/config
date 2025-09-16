@@ -8,3 +8,5 @@ macos-titlebar-style = "transparent"
 keybind = global:alt+grave_accent=toggle_quick_terminal
 quick-terminal-animation-duration = 0.0
 quick-terminal-position = bottom
+
+custom-shader = ./shaders/cursor_smear_fade.glsl
