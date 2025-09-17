@@ -1,3 +1,5 @@
+# vim: filetype=dosini
+
 # The font families to use.
 # 
 # You can generate the list of valid values using the CLI:
@@ -563,9 +565,9 @@ theme = Rose Pine Moon
 # Since version 1.2.0, this can also be set to `cell-foreground` to match
 # the cell foreground color, or `cell-background` to match the cell
 # background color.
-selection-foreground = 
+# selection-foreground = 
 
-selection-background = 
+# selection-background = 
 # Whether to clear selected text when typing. This defaults to `true`.
 # This is typical behavior for most terminal emulators as well as
 # text input fields. If you set this to `false`, then the selected text
@@ -581,7 +583,7 @@ selection-background =
 # cleared by clicking once or by pressing `escape`.
 # 
 # Available since: 1.2.0
-selection-clear-on-typing = true
+# selection-clear-on-typing = true
 
 # Whether to clear selected text after copying. This defaults to `false`.
 # 
@@ -593,7 +595,7 @@ selection-clear-on-typing = true
 # When set to `false`, the selection remains visible after copying, allowing
 # to see what was copied and potentially perform additional operations
 # on the same selection.
-selection-clear-on-copy = false
+# selection-clear-on-copy = false
 
 # The minimum contrast ratio between the foreground and background colors.
 # The contrast ratio is a value between 1 and 21. A value of 1 allows for no
@@ -977,7 +979,7 @@ selection-clear-on-copy = false
 #   to display. (Currently unimplemented.)
 # 
 # The default is `keystroke, no-output`.
-scroll-to-bottom = keystroke,no-output
+# scroll-to-bottom = keystroke,no-output
 
 # Determines whether running programs can detect the shift key pressed with a
 # mouse click. Typically, the shift key is used to extend mouse selection.
@@ -1099,7 +1101,7 @@ scroll-to-bottom = keystroke,no-output
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
 # 
 # Available since: 1.1.0
-split-divider-color = 
+# split-divider-color = 
 
 # The command to run, usually a shell. If this is not an absolute path, it'll
 # be looked up in the `PATH`. If this is not set, a default will be looked up
@@ -1285,7 +1287,7 @@ split-divider-color =
 # This is a future planned feature.
 # 
 # This can be changed at runtime but will only affect new terminal surfaces.
-scrollback-limit = 10000000
+# scrollback-limit = 10000000
 
 # Match a regular expression against the terminal text and associate clicking
 # it with an action. This can be used to match URLs, file paths, etc. Actions
@@ -2565,7 +2567,7 @@ quick-terminal-animation-duration = 0
 #   * `bash`, `elvish`, `fish`, `zsh` - Use this specific shell injection scheme.
 # 
 # The default value is `detect`.
-shell-integration = detect
+# shell-integration = detect
 
 # Shell integration features to enable. These require our shell integration
 # to be loaded, either automatically via shell-integration or manually.
@@ -2605,7 +2607,8 @@ shell-integration = detect
 # when both `ssh-env` and `ssh-terminfo` are enabled, Ghostty will install its
 # terminfo on remote hosts and use `xterm-ghostty` as TERM, falling back to
 # `xterm-256color` with environment variables if terminfo installation fails.
-shell-integration-features = cursor,no-sudo,title,no-ssh-env,no-ssh-terminfo
+# shell-integration-features = cursor,no-sudo,title,no-ssh-env,no-ssh-terminfo
+shell-integration-features = no-cursor
 
 # Custom entries into the command palette.
 # 
@@ -3517,5 +3520,3 @@ macos-titlebar-proxy-icon = hidden
 # 
 # This only works on macOS since only macOS has an auto-update feature.
 # auto-update-channel = 
-
-# vim: filetype=dosini
