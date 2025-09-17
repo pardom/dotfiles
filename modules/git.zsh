@@ -14,9 +14,11 @@ if [ ! -d "$GIT_ALIAS_DIR" ]; then
   curl -fsSL  "https://raw.githubusercontent.com/GitAlias/gitalias/main/gitalias.txt" > $GIT_ALIAS_PATH
 fi
 
-GIT_INCLUDES=$(git config --global --get-all include.path)
+# Append as a fresh [include] section so it lands outside the metatron-managed
+# block, which gets rewritten and would otherwise wipe the entry.
+GIT_INCLUDES=$(git config --global --get-all include.path 2>/dev/null)
 if [[ "$GIT_INCLUDES" != *"$GIT_ALIAS_PATH"* ]]; then
-  git config --global --add include.path $GIT_ALIAS_PATH
+  printf '\n[include]\n\tpath = %s\n' "$GIT_ALIAS_PATH" >> "$HOME/.gitconfig"
 fi
 
 git config --global user.name "Michael Pardo"

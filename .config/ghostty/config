@@ -52,7 +52,7 @@
 # Changing this configuration at runtime will only affect new terminals, i.e.
 # new windows, tabs, etc.
 # font-family = 
-font-family = BlexMono Nerd Font Mono
+font-family = Liga SFMono Nerd Font
 
 # font-family-bold = 
 # font-family-italic = 
@@ -283,7 +283,7 @@ font-size = 18
 # adjust-cell-width = 
 
 # adjust-cell-height = 
-adjust-cell-height = 50%
+# adjust-cell-height = 50%
 # Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # Increase to move baseline UP, decrease to move baseline DOWN.
 # See the notes about adjustments in `adjust-cell-width`.
@@ -3520,3 +3520,5 @@ macos-titlebar-proxy-icon = hidden
 # 
 # This only works on macOS since only macOS has an auto-update feature.
 # auto-update-channel = 
+
+background-opacity = 1.00

@@ -5,7 +5,7 @@ if ! command -v starship >/dev/null; then
   brew install starship
 fi
 
-export STARSHIP_CONFIG="$HOME/.starship/config.toml"
+export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
 
 eval "$(starship init zsh)"
 

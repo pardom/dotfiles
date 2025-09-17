@@ -31,6 +31,16 @@ tinty_source_shell_theme() {
   unset subcommand
 }
 
+tinty_picker() {
+  tinty list | grep base16 \
+  | fzf \
+  --style default \
+  --color "border:#$BASE16_COLOR_02_HEX,label:#$BASE16_COLOR_05_HEX" \
+  --bind "enter:execute(tinty apply {})+accept" \
+  --preview-window=right,66% \
+  --preview "tinty info {}"
+}
+
 if [ -n "$(command -v 'tinty')" ]; then
   tinty_source_shell_theme "init" > /dev/null
 
