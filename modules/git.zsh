@@ -5,11 +5,13 @@ if ! command -v git >/dev/null; then
   brew install git
 fi
 
-GIT_ALIAS_PATH="$HOME/.config/gitalias/gitalias.txt"
+GIT_ALIAS_DIR="$HOME/.config/gitalias"
+GIT_ALIAS_PATH="$GIT_ALIAS_DIR/gitalias.txt"
 
 # Ensure gitalias exists
-if [ ! -e "$GIT_ALIAS_PATH" ]; then
-  curl -fsSL "https://raw.githubusercontent.com/GitAlias/gitalias/refs/heads/main/gitalias.txt" > $GIT_ALIAS_PATH
+if [ ! -d "$GIT_ALIAS_DIR" ]; then
+  mkdir -p "$GIT_ALIAS_DIR"
+  curl -fsSL  "https://raw.githubusercontent.com/GitAlias/gitalias/main/gitalias.txt" > $GIT_ALIAS_PATH
 fi
 
 GIT_INCLUDES=$(git config --global --get-all include.path)

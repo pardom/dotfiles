@@ -9,7 +9,6 @@ export TINTED_SHELL_ENABLE_BASE16_VARS=1
 export TINTED_TMUX_OPTION_ACTIVE=1
 export TINTED_TMUX_OPTION_STATUSBAR=1
 
-#
 # Tinty isn't able to apply environment variables to your shell due to
 # the way shell sub-processes work. This is a work around by running
 # Tinty through a function and then executing the shell scripts.

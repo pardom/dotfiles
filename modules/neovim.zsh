@@ -8,13 +8,13 @@ fi
 LAZYVIM_APP_NAME="nvim-lazyvim"
 LAZYVIM_PATH="$HOME/.config/$LAZYVIM_APP_NAME"
 
-export NVIM_APPNAME=$LAZYVIM_APP_NAME
-export EDITOR=nvim
-
 # Ensure lazyvim is installed
 if [ ! -e "$LAZYVIM_PATH" ]; then
   git clone git@github.com:pardom/nvim-lazyvim.git $LAZYVIM_PATH
 fi
+
+export NVIM_APPNAME=$LAZYVIM_APP_NAME
+export EDITOR=nvim
 
 alias vim="nvim"
 alias vi="nvim"
