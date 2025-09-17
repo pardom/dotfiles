@@ -2792,7 +2792,7 @@ shell-integration-features = no-cursor
 # 
 # This can be changed at runtime and will affect all open terminals.
 # custom-shader = 
-custom-shader = /Users/mpardo/.dotfiles/.config/ghostty/shaders/cursor_smear_fade.glsl
+custom-shader = ~/.config/ghostty/shaders/cursor_smear_fade.glsl
 
 # If `true` (default), the focused terminal surface will run an animation
 # loop when custom shaders are used. This uses slightly more CPU (generally
