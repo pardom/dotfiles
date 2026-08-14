@@ -1,10 +1,10 @@
 [options]
-focus_follows_mouse = true
-mouse_follows_focus = true
+focus_follows_mouse = false
+mouse_follows_focus = false
 horizontal_mouse_warp = 1                            # -1 or 1; omit to disable
 horizontal_mouse_warp_offset = 0                     # px
-preset_column_widths = [0.25, 0.33, 0.5, 0.66, 0.75]
-animation_speed = 12.0                               # recommended 8–20
+preset_column_widths = [0.25, 0.33, 0.5, 0.66, 0.75, 1.00]
+animation_speed = 20.0                               # recommended 8–20
 auto_center = false
 sliver_height = 1.0                                  # 0.1–1.0
 sliver_width = 5                                     # px
@@ -25,7 +25,7 @@ deceleration = 4.0 # 1.0–10.0
 continuous = true
 
 [swipe.gesture]
-fingers_count = 3     # ≥3 to enable
+fingers_count = 0     # ≥3 to enable
 direction = "Natural" # "Natural" | "Reversed"
 vertical = true
 
@@ -34,16 +34,16 @@ modifier = "alt"
 vertical_modifier = "shift"
 
 # Native macOS dimming — set ONLY opacity (no color)
-[decorations.inactive.dim]
-opacity = -0.15       # -1.0..1.0; negative = darker
-opacity_night = -0.25
+# [decorations.inactive.dim]
+# opacity = -0.15       # -1.0..1.0; negative = darker
+# opacity_night = -0.25
 
 # Experimental active-window border
 [decorations.active.border]
-enabled = false
-color = "#89b4fa"
+enabled = true
+color = "#eb6f92"
 opacity = 1.0
-width = 2.0
+width = 5.0
 radius = "auto"   # number or "auto"
 
 [bindings]
@@ -52,8 +52,8 @@ window_focus_west = "alt - h"
 window_focus_east = "alt - l"
 window_focus_north = "alt - k"
 window_focus_south = "alt - j"
-window_focus_first = "alt + shift - h"
-window_focus_last = "alt + shift - l"
+# window_focus_first = "alt + shift - h"
+# window_focus_last = "alt + shift - l"
 
 # Swap
 window_swap_west = "alt + shift - h"
@@ -91,15 +91,15 @@ window_virtualsend_north = "cmd + alt + shift - k"
 window_virtualsend_south = "cmd + alt + shift - j"
 
 # Virtual workspaces — numbered
-window_virtualnum_1 = "cmd + alt - 1"
-window_virtualnum_2 = "cmd + alt - 2"
-window_virtualnum_3 = "cmd + alt - 3"
-window_virtualnum_4 = "cmd + alt - 4"
-window_virtualnum_5 = "cmd + alt - 5"
+window_virtualnum_1 = "alt - 1"
+window_virtualnum_2 = "alt - 2"
+window_virtualnum_3 = "alt - 3"
+window_virtualnum_4 = "alt - 4"
+window_virtualnum_5 = "alt - 5"
 
-window_virtualmovenum_1 = "cmd + alt + ctrl - 1"
-window_virtualmovenum_2 = "cmd + alt + ctrl - 2"
-window_virtualmovenum_3 = "cmd + alt + ctrl - 3"
+window_virtualmovenum_1 = "alt + shift - 1"
+window_virtualmovenum_2 = "alt + shift - 2"
+window_virtualmovenum_3 = "alt + shift - 3"
 
 window_virtualsendnum_1 = "cmd + alt + shift - 1"
 window_virtualsendnum_2 = "cmd + alt + shift - 2"
@@ -107,29 +107,18 @@ window_virtualsendnum_3 = "cmd + alt + shift - 3"
 
 quit = "cmd + alt + ctrl - q"
 
-[windows]
+[windows.all]
 title = ".*"
 horizontal_padding = 10
 vertical_padding = 10
 
+[windows.rekordbox]
+title = ".*"
+bundle_id = "com.pioneerdj.rekordboxdj"
+floating = true
+dont_focus = true
+
 # Per-window rules — `title` regex is required
-[windows.terminal]
-title = ".*"
-bundle_id = "com.apple.Terminal"
-horizontal_padding = 5
-vertical_padding = 0
-bindings_passthrough = ["ctrl-h", "ctrl-l"]
-
-[windows.iterm]
-title = ".*"
-bundle_id = "com.googlecode.iterm2"
-index = 0                           # preferred strip position
-
-[windows.browser]
-title = ".*"
-bundle_id = "com.google.Chrome"
-width = 0.66
-
 [windows.finder_info_float]
 title = "Info"
 bundle_id = "com.apple.finder"
