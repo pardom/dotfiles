@@ -1,1 +1,25 @@
-.config/tmux/plugins
+# Dependencies installed or downloaded by bootstrap
+/.config/antidote/
+/.config/gitalias/
+/.config/nvim-lazyvim/
+
+# TPM and tmux plugins (support either installation location)
+/.config/tmux/plugins/
+/.tmux/plugins/
+
+# Local application state and backups
+/.config/karabiner/automatic_backups/
+/.config/tmux/resurrect/
+/.cache/
+/.local/
+.zcompdump*
+*.zwc
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Local agent/workspace files
+/.agents/
+/.codex/
+/work/

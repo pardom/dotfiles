@@ -1,3 +1,12 @@
-\.git
-\.gitignore
-modules
+# Repository metadata and development files
+^/\.git(/|$)
+^/\.gitignore$
+^/\.stow-local-ignore$
+^/\.agents(/|$)
+^/\.codex(/|$)
+^/AGENTS\.md$
+^/README\.md$
+
+# These run from the checkout, not from symlinks in $HOME.
+^/modules(/|$)
+^/bootstrap\.zsh$

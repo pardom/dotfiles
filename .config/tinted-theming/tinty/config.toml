@@ -1,5 +1,5 @@
 shell = "zsh -c '{}'"
-default-scheme = "base16-catppuccin-machiato"
+default-scheme = "base16-catppuccin-macchiato"
 
 [[items]]
 name = "base16-shell"
