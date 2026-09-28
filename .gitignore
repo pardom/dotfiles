@@ -1,0 +1,40 @@
+# Dependencies installed or downloaded by install.zsh
+/.config/antidote/
+/.config/gitalias/
+/.config/nvim-lazyvim/
+/.sdkman/
+
+# TPM and tmux plugins (support either installation location)
+/.config/tmux/plugins/
+/.tmux/plugins/
+
+# Local application state and backups
+/.config/karabiner/automatic_backups/
+/.config/tmux/resurrect/
+/.cache/
+/.local/
+.zcompdump*
+*.zwc
+.DS_Store
+*.swp
+*.swo
+*~
+__pycache__/
+
+# Local agent/workspace files
+/.agents/*
+!/.agents/skills
+!/.agents/policies
+!/.agents/hooks
+!/.agents/AGENTS.md
+!/.agents/check
+/.codex/*
+!/.codex/AGENTS.md
+!/.codex/hooks.json
+!/.codex/policies
+!/.codex/hooks
+/.claude/*
+!/.claude/CLAUDE.md
+!/.claude/skills/
+/work/
+/.config/karabiner/automatic_backups/

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Onboard"
+  short_description: "Purpose, users, flows, domain model, and architecture of a codebase"

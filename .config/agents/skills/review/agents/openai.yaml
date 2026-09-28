@@ -1,0 +1,3 @@
+interface:
+  display_name: "Review"
+  short_description: "Fresh-context review against spec, context, and policies"

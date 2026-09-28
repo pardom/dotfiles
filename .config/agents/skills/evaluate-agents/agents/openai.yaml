@@ -1,0 +1,3 @@
+interface:
+  display_name: "Evaluate Agents"
+  short_description: "Compare agent setups with repeatable tasks and independent grading"

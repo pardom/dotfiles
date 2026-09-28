@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec"
+  short_description: "Interview, then write a self-contained spec"
+policy:
+  allow_implicit_invocation: false

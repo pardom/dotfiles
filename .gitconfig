@@ -1,0 +1,12 @@
+[include]
+    path = ~/.config/gitalias/gitalias.txt
+
+[user]
+    name = Michael Pardo
+    email = kensuke155@gmail.com
+
+[credential]
+    helper = osxkeychain
+
+[diff]
+    external = difft

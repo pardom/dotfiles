@@ -1,0 +1,25 @@
+# Repository metadata and development files
+^/\.git(/|$)
+^/\.gitignore$
+^/\.stow-local-ignore$
+^/\.agents/(?!skills$|policies$|hooks$|AGENTS\.md$).*
+# Only entry points into .config/agents belong in the agent config directories.
+# Codex reads files by their link path, so its directories also mirror
+# policies/ and hooks/ for relative paths to resolve.
+^/\.codex/(?!AGENTS\.md$|hooks\.json$|policies$|hooks$).*
+^/\.claude/(?!CLAUDE\.md$|skills$|skills/[^/]+$).*
+# Karabiner only notices config changes when its directory, not karabiner.json,
+# is the symlink. modules/karabiner/install.zsh links the directory instead.
+^/\.config/karabiner(/|$)
+^/AGENTS\.md$
+^/CLAUDE\.md$
+^/README\.md$
+
+# These run from the checkout, not from symlinks in $HOME.
+^/modules(/|$)
+^/install\.zsh$
+^/update\.zsh$
+^/\.stowrc$
+
+# Python bytecode from the agent hooks stays in the checkout.
+^/\.config/agents/hooks/__pycache__(/|$)

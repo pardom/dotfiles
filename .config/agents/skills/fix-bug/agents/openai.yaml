@@ -1,0 +1,5 @@
+interface:
+  display_name: "Fix bug"
+  short_description: "Reproduce, diagnose root cause, fix, verify, review"
+policy:
+  allow_implicit_invocation: false

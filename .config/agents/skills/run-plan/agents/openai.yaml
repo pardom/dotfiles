@@ -1,0 +1,5 @@
+interface:
+  display_name: "Run plan"
+  short_description: "Build, check, review, and commit plan tasks in order"
+policy:
+  allow_implicit_invocation: false

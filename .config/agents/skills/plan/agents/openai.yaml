@@ -1,0 +1,5 @@
+interface:
+  display_name: "Plan"
+  short_description: "Design and vertical-slice tasks from a spec"
+policy:
+  allow_implicit_invocation: false

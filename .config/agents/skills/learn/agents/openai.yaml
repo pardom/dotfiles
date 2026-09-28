@@ -1,0 +1,5 @@
+interface:
+  display_name: "Learn"
+  short_description: "Route lessons to checks, docs, or global setup; prune the rest"
+policy:
+  allow_implicit_invocation: false

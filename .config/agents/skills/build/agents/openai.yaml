@@ -1,0 +1,5 @@
+interface:
+  display_name: "Build"
+  short_description: "Implement one task test-first, verify, and review"
+policy:
+  allow_implicit_invocation: false

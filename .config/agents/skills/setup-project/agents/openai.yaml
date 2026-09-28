@@ -1,0 +1,5 @@
+interface:
+  display_name: "Set up project"
+  short_description: "AGENTS.md, strict .agents/check, pre-push hook, architecture lint, docs"
+policy:
+  allow_implicit_invocation: false
