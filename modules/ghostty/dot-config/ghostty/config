@@ -1,0 +1,8 @@
+# Personal Ghostty settings
+
+font-family = Liga SFMono Nerd Font
+font-size = 16
+title = " "
+shell-integration-features = no-cursor
+macos-titlebar-proxy-icon = hidden
+background-opacity = 1.00

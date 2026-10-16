@@ -1,0 +1,6 @@
+{
+  "trustedformulae": [
+    "tinted-theming/tinted/tinty",
+    "xcodesorg/made/xcodes"
+  ]
+}

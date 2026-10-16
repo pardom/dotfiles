@@ -1,0 +1,19 @@
+# Shared by every module via .stow-local-ignore -> ../../stow-ignore.
+# Only dot-* payloads at the package root are deployable.
+^/(?!dot-)[^/]+$
+
+# Never deploy caches, backups, or editor state.
+^__pycache__$
+^\.DS_Store$
+.*~
+.*\.(swp|swo|zwc)
+
+# Agent directories contain only the authored entry points.
+^/(?:dot-|\.)agents/(?!policies$|hooks$|AGENTS\.md$).*
+^/(?:dot-|\.)codex/(?!AGENTS\.md$|hooks\.json$|policies$|hooks$).*
+^/(?:dot-|\.)claude/(?!CLAUDE\.md$).*
+^/(?:dot-|\.)pi/agent/(?!AGENTS\.md$|policies$|hooks$).*
+# Skills are copied by the skills CLI; Karabiner needs a directory link.
+^/(?:dot-|\.)config/agents/skills(/|$)
+^/(?:dot-|\.)config/karabiner(/|$)
+^/(?:dot-|\.)config/tmux/(plugins|resurrect)(/|$)

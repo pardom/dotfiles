@@ -1,0 +1,41 @@
+# Downloaded dependencies and local state never belong in Stow payloads.
+/modules/*/dot-config/antidote/
+/modules/*/dot-config/gitalias/
+/modules/*/dot-config/nvim-lazyvim/
+/modules/*/dot-config/tmux/plugins/
+/modules/*/dot-config/tmux/resurrect/
+/modules/*/dot-config/karabiner/automatic_backups/
+/modules/*/dot-config/karabiner/assets/
+/.sdkman/
+/.tmux/plugins/
+/.cache/
+/.local/
+.zcompdump*
+*.zwc
+.DS_Store
+*.swp
+*.swo
+*~
+__pycache__/
+
+# Checkout-only agent/workspace files.
+/.agents/*
+!/.agents/check
+/work/
+
+# Only authored entry points belong in agent payload directories.
+/modules/agents/dot-agents/*
+!/modules/agents/dot-agents/policies
+!/modules/agents/dot-agents/hooks
+!/modules/agents/dot-agents/AGENTS.md
+/modules/codex/dot-codex/*
+!/modules/codex/dot-codex/AGENTS.md
+!/modules/codex/dot-codex/hooks.json
+!/modules/codex/dot-codex/policies
+!/modules/codex/dot-codex/hooks
+/modules/claude/dot-claude/*
+!/modules/claude/dot-claude/CLAUDE.md
+/modules/pi/dot-pi/agent/*
+!/modules/pi/dot-pi/agent/AGENTS.md
+!/modules/pi/dot-pi/agent/policies
+!/modules/pi/dot-pi/agent/hooks
