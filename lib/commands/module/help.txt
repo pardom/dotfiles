@@ -1,0 +1,11 @@
+Manage modules
+
+Usage: stowaway module <COMMAND>
+
+Commands:
+  create <NAME>      Create a module
+  delete <NAME>      Delete a module
+  help [COMMAND]...  Print this message or the help of the given command
+
+Options:
+  -h, --help  Print help

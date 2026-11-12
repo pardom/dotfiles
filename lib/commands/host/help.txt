@@ -1,0 +1,13 @@
+Manage hosts
+
+Usage: stowaway host <COMMAND>
+
+Commands:
+  add [NAME]         Add roles and modules to a host
+  create [NAME]      Create a host
+  delete <NAME>      Delete a host
+  remove [NAME]      Remove roles and modules from a host
+  help [COMMAND]...  Print this message or the help of the given command
+
+Options:
+  -h, --help  Print help

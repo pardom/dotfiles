@@ -1,0 +1,4 @@
+# Lets switch stow the repository root as a package: only the shell startup
+# files below are linked into $HOME. Modules are stowed separately from
+# modules/.
+^/(?!\.zshenv$|\.zprofile$|\.zshrc$).*

@@ -1,0 +1,15 @@
+# Shared by every module via .stow-local-ignore -> ../../.stow-ignore.
+# Patterns are Perl regexes. A pattern containing / is matched against the
+# path from the module root, written with a leading / (/dot-config/app/conf).
+# A pattern without / is matched against the file name in any directory.
+
+# Only dot-* payloads at the module root are deployable. Scripts (env.zsh,
+# install.zsh, ...) and notes stay in the repository.
+^/(?!dot-)[^/]+$
+
+# Finder writes these into any directory it opens.
+^\.DS_Store$
+
+# Add paths a module's install.zsh links itself, or that an app writes into
+# its own config directory. For example:
+#   ^/dot-config/ghostty(/|$)

@@ -1,0 +1,89 @@
+#!/bin/zsh -f
+# Manage this dotfiles repository
+
+# Each command is a file in lib/commands/: `stowaway switch` runs
+# lib/commands/switch.zsh. A directory groups commands, so
+# `stowaway module create` runs lib/commands/module/create.zsh. Each
+# directory's help.txt is its help, listing its commands; update it when you
+# add one.
+
+set -eu
+
+# The framework's version, printed by --version. Follows semantic
+# versioning: bump the major part for changes that break existing hosts,
+# roles, modules or commands.
+readonly STOWAWAY_VERSION=0.1.0
+
+# The repository root, exported so commands can find lib/.
+typeset -rx STOWAWAY_ROOT=${0:A:h}
+readonly COMMANDS_DIR=$STOWAWAY_ROOT/lib/commands
+
+source $STOWAWAY_ROOT/lib/base.zsh
+
+# Walk the words through groups (directories) to a command file and run it.
+# `help` anywhere on the path asks for the help of what follows it.
+function main() {
+  local group_dir=$COMMANDS_DIR
+  # The words so far, for usage lines: "" or "module ".
+  local prefix=
+  local -i help_mode=0
+  local usage
+  local command_file
+
+  while (( $# > 0 )); do
+    usage="Usage: stowaway ${prefix}<COMMAND>"
+
+    case $1 in
+      -h|--help)
+        cat "$group_dir/help.txt"
+        exit 0
+        ;;
+      -V|--version)
+        # Only the top level has --version.
+        [[ $group_dir == $COMMANDS_DIR ]] \
+          || die_unexpected_argument "$usage" "$1"
+        print -r -- "stowaway $STOWAWAY_VERSION"
+        exit 0
+        ;;
+      help)
+        help_mode=1
+        shift
+        ;;
+      -*)
+        die_unexpected_argument "$usage" "$1"
+        ;;
+      *)
+        # Command words are plain names, so "../repo/host" can't reach a
+        # file outside lib/commands/.
+        if ! is_valid_name "$1"; then
+          die_usage "$usage" "unrecognized subcommand '$1'"
+        elif [[ -d $group_dir/$1 ]]; then
+          group_dir=$group_dir/$1
+          prefix+="$1 "
+          shift
+        elif [[ -f $group_dir/$1.zsh ]]; then
+          command_file=$group_dir/$1.zsh
+          shift
+          if (( help_mode )); then
+            exec /bin/zsh -f "$command_file" --help
+          fi
+          exec /bin/zsh -f "$command_file" "$@"
+        else
+          die_usage "$usage" "unrecognized subcommand '$1'"
+        fi
+        ;;
+    esac
+  done
+
+  # The words ended on a group. Asked for help: print it. Otherwise a command
+  # is missing, so print help as an error.
+  if (( help_mode )); then
+    cat "$group_dir/help.txt"
+    exit 0
+  fi
+
+  cat "$group_dir/help.txt" >&2
+  exit 2
+}
+
+main "$@"

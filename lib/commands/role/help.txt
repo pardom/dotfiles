@@ -1,0 +1,13 @@
+Manage roles
+
+Usage: stowaway role <COMMAND>
+
+Commands:
+  add <NAME>         Add roles and modules to a role
+  create <NAME>      Create a role
+  delete <NAME>      Delete a role
+  remove <NAME>      Remove roles and modules from a role
+  help [COMMAND]...  Print this message or the help of the given command
+
+Options:
+  -h, --help  Print help
