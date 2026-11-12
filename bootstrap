@@ -1,0 +1,27 @@
+#!/bin/zsh -f
+# Set up a Mac from this checkout: install Homebrew and Stow if needed, then
+# switch. Stow lives here, not in a module, because switch needs it to link
+# modules and must never uninstall it.
+# Arguments go to stowaway switch, e.g. a host name. Safe to re-run.
+# Run: /path/to/dotfiles/bootstrap [host]
+
+set -eu
+
+dotfiles_root=${0:A:h}
+brew_bin=/opt/homebrew/bin/brew
+brew_installer_url=https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+brew_installer=${TMPDIR:-/tmp}/brew-install.sh
+
+if [[ ! -x "$brew_bin" ]]; then
+  printf '==> %s\n' 'Homebrew'
+  curl -fsSL "$brew_installer_url" -o "$brew_installer"
+  /bin/bash "$brew_installer"
+  rm -f -- "$brew_installer"
+fi
+
+if ! "$brew_bin" list --formula stow >/dev/null 2>&1; then
+  printf '==> %s\n' 'Stow'
+  "$brew_bin" install --formula stow
+fi
+
+exec "$dotfiles_root/stowaway" switch "$@"

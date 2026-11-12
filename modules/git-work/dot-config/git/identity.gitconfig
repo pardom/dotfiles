@@ -1,0 +1,5 @@
+# Work identity, included by ~/.gitconfig. Fill in before use.
+# Secrets or per-machine values belong in ~/.config/git/local.gitconfig
+# (untracked), which ~/.gitconfig includes after this file.
+[user]
+    # email = you@example.com

@@ -1,0 +1,19 @@
+[include]
+    path = ~/.config/gitalias/gitalias.txt
+
+[user]
+    name = Michael Pardo
+
+[credential]
+    helper = osxkeychain
+
+[diff]
+    external = difft
+
+# Later includes override earlier settings. Missing files are skipped.
+# identity.gitconfig: linked by a role module (e.g. git-personal).
+# local.gitconfig: untracked, per-machine values such as a work email.
+[include]
+    path = ~/.config/git/identity.gitconfig
+[include]
+    path = ~/.config/git/local.gitconfig

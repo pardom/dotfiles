@@ -1,0 +1,13 @@
+# Files written by macOS, editors, zsh and Python.
+.DS_Store
+*.swp
+*.swo
+*~
+.zcompdump*
+*.zwc
+__pycache__/
+
+# karabiner/install.zsh links ~/.config/karabiner to the module directory, so
+# Karabiner writes its backups and assets into the repository.
+/modules/karabiner/dot-config/karabiner/automatic_backups/
+/modules/karabiner/dot-config/karabiner/assets/

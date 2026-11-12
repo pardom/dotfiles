@@ -13,3 +13,19 @@
 # Add paths a module's install.zsh links itself, or that an app writes into
 # its own config directory. For example:
 #   ^/dot-config/ghostty(/|$)
+
+# Never deploy caches, backups, or editor state.
+^__pycache__$
+.*~
+.*\.(swp|swo|zwc)
+
+# Agent directories contain only the authored entry points.
+^/(?:dot-|\.)agents/(?!policies$|hooks$|AGENTS\.md$).*
+^/(?:dot-|\.)codex/(?!AGENTS\.md$|hooks\.json$|policies$|hooks$).*
+^/(?:dot-|\.)claude/(?!CLAUDE\.md$).*
+^/(?:dot-|\.)pi/agent/(?!AGENTS\.md$|policies$|hooks$).*
+# Skills are copied by the skills CLI. karabiner/install.zsh links the
+# Karabiner directory itself, because Karabiner needs a directory link.
+^/(?:dot-|\.)config/agents/skills(/|$)
+^/(?:dot-|\.)config/karabiner(/|$)
+^/(?:dot-|\.)config/tmux/(plugins|resurrect)(/|$)
