@@ -5,3 +5,7 @@ source "${0:A:h:h:h}/lib/pkg.zsh"
 
 # Trusted through ~/.config/homebrew/trust.json (homebrew module).
 brew_install tinted-theming/tinted/tinty
+
+# Clone the theme repositories listed in config.toml. Existing clones are
+# left unchanged.
+tinty install
