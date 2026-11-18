@@ -9,7 +9,7 @@ onboarding = false
 # Built-in themes: catppuccin, terminal, tokyo-night, dracula, nord,
 #                  gruvbox, one-dark, solarized, kanagawa, rose-pine,
 #                  vesper
-# name = "catppuccin"
+name = "terminal"
 
 # Follow host terminal light/dark appearance and switch Herdr UI themes.
 # Existing manual behavior is unchanged unless this is true.
@@ -37,6 +37,7 @@ onboarding = false
 # panel_bg = "#1e1e2e"
 # text = "#cdd6f4"
 
+auto_switch = false
 [terminal]
 # Executable used for new interactive panes.
 # Empty means $SHELL, then /bin/sh.
@@ -75,7 +76,54 @@ onboarding = false
 # Named punctuation such as minus, comma, ampersand, plus, and backtick is also accepted.
 # Most reliable direct bindings are ctrl+letter, function keys, and explicit modified chords.
 # alt+..., cmd/super, and punctuation-with-modifiers may depend on your terminal/tmux setup.
-prefix = "ctrl+space"
+prefix = ["ctrl+space", "ctrl+b"]
+
+# tmux-compatible bindings. These mirror tmux defaults plus the bindings added
+# by tmux-sensible and tmux-pain-control, mapping tmux sessions to workspaces
+# and tmux windows to tabs. The commented defaults below remain as reference.
+
+# Sessions (workspaces). tmux uses s and w for its choose-tree pickers.
+detach = ["prefix+d", "prefix+q"]
+reload_config = ["prefix+r", "prefix+shift+r"]
+settings = "prefix+shift+s"
+workspace_picker = "prefix+s"
+goto = ["prefix+w", "prefix+g"]
+rename_workspace = ["prefix+$", "prefix+shift+w"]
+previous_workspace = "prefix+("
+next_workspace = "prefix+)"
+
+# Windows (tabs). tmux-sensible adds C-p and C-n; tmux-pain-control adds < and >.
+rename_tab = ["prefix+comma", "prefix+shift+t"]
+previous_tab = ["prefix+p", "prefix+ctrl+p"]
+next_tab = ["prefix+n", "prefix+ctrl+n"]
+move_tab_previous = "prefix+<"
+move_tab_next = "prefix+>"
+close_tab = ["prefix+ampersand", "prefix+shift+x"]
+
+# Panes. tmux-pain-control adds C-h/j/k/l focus and | \ - _ splits. Herdr has
+# no full-width split, so \ and _ behave like | and -.
+focus_pane_left = ["prefix+h", "prefix+ctrl+h"]
+focus_pane_down = ["prefix+j", "prefix+ctrl+j"]
+focus_pane_up = ["prefix+k", "prefix+ctrl+k"]
+focus_pane_right = ["prefix+l", "prefix+ctrl+l"]
+last_pane = "prefix+semicolon"
+split_vertical = ["prefix+|", "prefix+percent", "prefix+backslash", "prefix+v"]
+split_horizontal = ["prefix+minus", "prefix+quote", "prefix+_"]
+
+# tmux-pain-control resizes with H/J/K/L, which Herdr uses for directional swap
+# by default. Swap moves to tmux's { and } (left and right only), and resize
+# mode moves off r so r can reload the config as in tmux. Herdr leaves prefix
+# mode after each action, so the direct C-S-h/j/k/l chords stand in for tmux's
+# repeatable bindings: holding one repeats through the OS key repeat.
+resize_pane_left = ["prefix+shift+h", "ctrl+shift+h"]
+resize_pane_down = ["prefix+shift+j", "ctrl+shift+j"]
+resize_pane_up = ["prefix+shift+k", "ctrl+shift+k"]
+resize_pane_right = ["prefix+shift+l", "ctrl+shift+l"]
+resize_mode = "prefix+ctrl+r"
+swap_pane_left = "prefix+{"
+swap_pane_right = "prefix+}"
+swap_pane_up = ""
+swap_pane_down = ""
 
 # Prefix-mode actions
 # help = "prefix+?"
@@ -233,14 +281,14 @@ prefix = "ctrl+space"
 
 # Draw borders along the outside edge of the pane area.
 # Disable for tmux-style internal splitters without an outside frame.
-# pane_outer_borders = true
+pane_outer_borders = false
 
 # Draw interactive scrollbars beside terminal panes.
 # Set false to reclaim the scrollbar column and keep it out of terminal-native selections.
 # pane_scrollbars = true
 
 # Keep split panes visually separated instead of sharing divider borders.
-# pane_gaps = true
+pane_gaps = false
 
 # Show detected/reported agent labels in split pane borders when no manual pane name is set.
 # show_agent_labels_on_pane_borders = false
