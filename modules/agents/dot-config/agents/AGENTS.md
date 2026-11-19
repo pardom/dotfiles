@@ -60,6 +60,15 @@ During iterative work, run the tests, formatter and linter only for the code you
 changed. Before pushing or opening a pull request, run the whole test suite and
 every check the project's CI runs.
 
+## Debugging
+
+Find the root cause of a bug with the Five Whys before fixing it. Ask why the
+failure happened, then ask why that cause happened, and repeat until you reach a
+cause that a change to the code, design or process can prevent. This usually
+takes about five steps. Support each answer with evidence such as a log, a stack
+trace or a failing test, and don't rely on a guess. Fix the root cause instead
+of the symptom, and include the chain of answers in your report.
+
 ## Git
 
 - In a personal project (my own account, no other contributors), work on the
