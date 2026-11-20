@@ -11,7 +11,7 @@
   "ui_font": "Liga SFMono Nerd Font",
   "minimum_contrast": 1.0,
   "theme": {
-    "light": "paper",
-    "dark": "ink"
+    "light": "tinted",
+    "dark": "tinted"
   }
 }
