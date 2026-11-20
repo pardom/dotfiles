@@ -16,7 +16,7 @@ themes-dir = "colors"
 
 [[items]]
 name = "tinted-herdr"
-path = "ssh://git@github.com/pardom/tinted-herdr.git"
+path = "https://github.com/pardom/tinted-herdr"
 themes-dir = "themes"
 supported-systems = ["base16", "base24"]
 hook = "mkdir -p \"$HOME/.config/herdr-app/themes\" && cp -f \"$TINTY_THEME_FILE_PATH\" \"$HOME/.config/herdr-app/themes/tinted.json\""
