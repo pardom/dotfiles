@@ -57,8 +57,14 @@ Applies to docs, READMEs, code comments and commit messages.
 ## Verification
 
 During iterative work, run the tests, formatter and linter only for the code you
-changed. Before pushing or opening a pull request, run the whole test suite and
-every check the project's CI runs.
+changed. Before pushing or opening a pull request, run the checks that cover
+the change: the tests for the affected code and its dependents, plus the
+formatter, linter and any other fast checks the project's CI runs.
+
+Run the whole test suite only when it is fast (a few minutes at most) or when
+the project requires it, for example in its contributing guide or a
+pre-push hook. If the suite is too slow to run in full, say so in the report
+and leave the remaining tests to CI.
 
 ## Debugging
 
@@ -76,8 +82,8 @@ of the symptom, and include the chain of answers in your report.
   feature or bug fix. If you can't tell which kind it is, ask.
 - Make small commits. I squash them before pushing, so they don't need to stand
   alone.
-- Don't push or open a pull request unless I ask, and run the full verification
-  first when I do.
+- Don't push or open a pull request unless I ask, and run the verification
+  described above first when I do.
 - Always ask before committing. First walk me through the change as in a code
   review: the intent in one or two sentences, each changed file in reading order
   with what changed and why, what you verified (command and result), anything
